@@ -12,7 +12,9 @@ const Layout = ({ children }) => {
       <header>
         <Navbar />
       </header>
-      <main>{children}</main>
+      <main className="max-w-[1400px] flex flex-col justify-center items-center w-[100%] m-auto">
+        {children}
+      </main>
 
       <footer>
         <Footer />

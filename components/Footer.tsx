@@ -4,7 +4,7 @@ import { AiFillInstagram, AiOutlineTwitter } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <div className="mx-5 flex flex-col justify-center items-center mt-10">
+    <div className="mx-5 flex flex-col justify-center items-center my-10">
       <div className="flex gap-6 ">
         <div>
           <Link href="">
@@ -12,7 +12,7 @@ const Footer = () => {
           </Link>
         </div>
         <div>
-          <Link href="">
+          <Link href="https://twitter.com/victorr_js">
             <AiOutlineTwitter size={30} />
           </Link>
         </div>

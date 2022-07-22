@@ -15,7 +15,12 @@ const Home: NextPage = ({ productsData, bannerData }: HomeProps) => {
     <main className="mx-5">
       <HeroBanner heroBannerData={bannerData} />
       <div className="my-10">
-        <h2>Best Selling Products</h2>
+        <h2 className="text-center text-4xl font-bold mt-5">
+          Best Selling Products
+        </h2>
+        <p className="text-center mb-5 font-mono">
+          The best Huawei has to offer.
+        </p>
         <div className="flex flex-wrap gap-[15px] justify-center items-center">
           {productsData?.map((product) => (
             <Product key={product._id} product={product} />
