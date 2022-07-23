@@ -20,7 +20,7 @@ const HeroBanner = ({ heroBannerData }: HeroBannerProps) => {
         <img
           src={urlFor(banner.image)}
           alt="header image"
-          className=" md:absolute md:top-0 md:left-0 md:right-0 md:m-auto"
+          className="md:w-[600px] md:absolute md:top-0 md:left-0 md:right-0 md:m-auto"
         />
         <div>
           <Link href={`/product/${banner.product}`}>

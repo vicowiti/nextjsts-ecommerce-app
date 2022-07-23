@@ -6,12 +6,12 @@ const Footer = () => {
   return (
     <div className="mx-5 flex flex-col justify-center items-center my-10">
       <div className="flex gap-6 ">
-        <div>
+        <div className="cursor-pointer">
           <Link href="">
             <AiFillInstagram size={30} />
           </Link>
         </div>
-        <div>
+        <div className="cursor-pointer">
           <Link href="https://twitter.com/victorr_js">
             <AiOutlineTwitter size={30} />
           </Link>
