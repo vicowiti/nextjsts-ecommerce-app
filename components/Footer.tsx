@@ -8,12 +8,16 @@ const Footer = () => {
       <div className="flex gap-6 ">
         <div className="cursor-pointer">
           <Link href="">
-            <AiFillInstagram size={30} />
+            <a>
+              <AiFillInstagram size={30} />
+            </a>
           </Link>
         </div>
         <div className="cursor-pointer">
           <Link href="https://twitter.com/victorr_js">
-            <AiOutlineTwitter size={30} />
+            <a>
+              <AiOutlineTwitter size={30} />
+            </a>
           </Link>
         </div>
       </div>

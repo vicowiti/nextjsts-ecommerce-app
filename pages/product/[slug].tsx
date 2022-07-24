@@ -30,6 +30,7 @@ const ProductDetails = ({ product, products }) => {
           <div className="smallimages flex gap-5 py-4">
             {image.map((item, index) => (
               <img
+                key={index}
                 src={urlFor(item)}
                 className="w-14 h-20 object-contain rounded-md shadow-md p-2 border-gray-300 border-[.5px] border-solid"
                 onMouseOver={() => setIndex(index)}

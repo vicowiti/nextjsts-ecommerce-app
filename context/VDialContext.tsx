@@ -8,7 +8,7 @@ export const VDialContext = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [totalQuantities, setTotalQuantities] = useState();
+  const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
 
   //   State Update Functions
@@ -28,7 +28,7 @@ export const VDialContext = ({ children }) => {
   };
 
   //   State Update Functions
-  // 2. Add product to cart
+  // 3. Add product to cart
   const onAdd = (product, quantity) => {
     const checkProductinCart = cartItems.find(
       (item) => item._id === product._id
@@ -54,10 +54,19 @@ export const VDialContext = ({ children }) => {
     toast.success(`${quantity} ${product.name} added to cart`);
   };
 
+  //   State Update Functions
+  // 4. Remove product from cart
+
+  const removeFromCart = (id) => {
+    const updatedCart = cartItems.filter((item) => item._id !== id);
+    setCartItems(updatedCart);
+  };
+
   return (
     <Context.Provider
       value={{
         showCart,
+        setShowCart,
         cartItems,
         totalPrice,
         totalQuantities,
@@ -65,6 +74,7 @@ export const VDialContext = ({ children }) => {
         qtyDecrement,
         qtyIncrement,
         onAdd,
+        removeFromCart,
       }}
     >
       {children}
