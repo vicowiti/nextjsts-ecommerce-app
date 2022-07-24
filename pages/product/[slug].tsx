@@ -7,8 +7,12 @@ import {
   AiOutlineStar,
 } from "react-icons/ai";
 import Product from "../../components/Product";
+import { UseVdialContext } from "../../context/VDialContext";
 
 const ProductDetails = ({ product, products }) => {
+  // Bring in global state
+  const { qty, qtyDecrement, qtyIncrement, onAdd } = UseVdialContext();
+
   const [index, setIndex] = useState(0);
 
   const { name, details, price, image } = product;
@@ -54,18 +58,27 @@ const ProductDetails = ({ product, products }) => {
           <div className=" items-center">
             <p className="pr-5">Quantity:</p>
             <div className="border-[2px] border-solid border-[#324d67] flex  w-40 items-center justify-between ">
-              <button className="flex-1 flex items-center justify-center">
+              <button
+                className="flex-1 flex items-center justify-center"
+                onClick={qtyDecrement}
+              >
                 <AiOutlineMinus size={20} color="red" />
               </button>
               <div className="text-2xl border-x-[#324d67] px-3 border-2 flex-1 flex items-center justify-center">
-                {0}
+                {qty}
               </div>
-              <button className="flex-1 flex items-center justify-center">
+              <button
+                className="flex-1 flex items-center justify-center"
+                onClick={qtyIncrement}
+              >
                 <AiOutlinePlus size={20} color="green" />
               </button>
             </div>
             <section className="py-5 flex justify-center items-center gap-14 md:justify-start">
-              <button className="w-36 p-3 border-[2px] border-red-700 text-white bg-red-700 hover:scale-105 duration-700">
+              <button
+                className="w-36 p-3 border-[2px] border-red-700 text-white bg-red-700 hover:scale-105 duration-700"
+                onClick={() => onAdd(product, qty)}
+              >
                 Add to Cart
               </button>
               <button className="w-36 p-3 border-[2px] border-red-700 text-red-700 bg-white-700 hover:scale-105 duration-700">

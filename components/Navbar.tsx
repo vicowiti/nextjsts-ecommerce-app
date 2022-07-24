@@ -8,10 +8,12 @@ const Navbar = () => {
     <nav className="h-16 flex justify-between items-center mx-5">
       <section className=" text-gray-700 cursor-pointer">
         <div>
-          <h1 className="text-2xl flex items-center">
-            VDIAL
-            <BsPhoneLandscape />
-          </h1>
+          <Link href="/">
+            <h1 className="text-2xl flex items-center">
+              VDIAL
+              <BsPhoneLandscape />
+            </h1>
+          </Link>
         </div>
       </section>
       <section>
