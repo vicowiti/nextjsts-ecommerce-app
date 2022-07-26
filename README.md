@@ -2,7 +2,7 @@
 
 - The site is available here [HERE](https://vdial.netlify.app/)
 
-<img src="./assets/vdial.png" width="400px" />
+<img src="./assets/vdial.png" width="800px" />
 
 ## Tech Stack
 
