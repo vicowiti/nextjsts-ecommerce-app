@@ -1,13 +1,9 @@
 import Link from "next/link";
 import React from "react";
-import { BannerData } from "./lib/types";
+
 import { urlFor } from "./lib/client";
 
-interface HeroBannerProps {
-  heroBannerData: BannerData[];
-}
-
-const HeroBanner = ({ heroBannerData }: HeroBannerProps) => {
+const HeroBanner = ({ heroBannerData }) => {
   const banner = heroBannerData[0];
   return (
     <section className="bg-[#dcdcdc] max-w-[140000px] h-[500px]  rounded-lg">

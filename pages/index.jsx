@@ -1,16 +1,9 @@
-import type { NextPage } from "next";
 import FooterBanner from "../components/FooterBanner";
 import HeroBanner from "../components/HeroBanner";
 import { client } from "../components/lib/client";
-import { BannerData } from "../components/lib/types";
 import Product from "../components/Product";
 
-interface HomeProps {
-  bannerData: [];
-  productsData: [];
-}
-
-const Home: NextPage = ({ productsData, bannerData }: HomeProps) => {
+const Home = ({ productsData, bannerData }) => {
   return (
     <main className="mx-5">
       <HeroBanner heroBannerData={bannerData} />
