@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import React from "react";
 import Link from "next/link";
 import { TiDeleteOutline } from "react-icons/ti";
@@ -21,8 +21,6 @@ const Cart = () => {
     setShowCart,
     removeFromCart,
   } = UseVdialContext();
-
-  console.log(cartItems);
 
   const CartRef = useRef();
 
@@ -71,16 +69,13 @@ const Cart = () => {
                 </div>
                 <div className="flex justify-between  ">
                   <div className="py-3 flex items-center w-[250px] md:w-[350px] justify-between ">
-                    <div className="border-[2px] border-solid border-[#324d67] flex w-24 md:w-40 items-center justify-between">
-                      <button className="flex-1 flex items-center justify-center">
-                        <AiOutlineMinus size={20} color="red" />
-                      </button>
-                      <div className="text-2xl border-x-[#324d67] px-2 border-2 flex-1 flex items-center justify-center">
-                        {item.quantity}
-                      </div>
-                      <button className="flex-1 flex items-center justify-center">
-                        <AiOutlinePlus size={20} color="green" />
-                      </button>
+                    <div className=" flex w-24 md:w-40 items-center justify-between">
+                      <p>
+                        Quantity :{" "}
+                        <span className="font-bold text-red-600">
+                          {item.quantity}
+                        </span>
+                      </p>
                     </div>
                     <div>
                       <MdOutlineCancel
@@ -103,9 +98,6 @@ const Cart = () => {
               <h3 className="text-2xl md:text-4xl">Kshs: {totalPrice}</h3>
             </div>
             <section className="py-3">
-              <button className="w-full py-2 bg-red-600 rounded-xl text-white font-bold">
-                Pay with Stripe
-              </button>
               <button
                 className="w-full py-2 bg-green-600 rounded-xl my-2 text-white font-bold"
                 onClick={() => toast.error("Mpesa support coming soon")}

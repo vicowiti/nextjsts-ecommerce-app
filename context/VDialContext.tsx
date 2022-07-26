@@ -11,6 +11,9 @@ export const VDialContext = ({ children }) => {
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
 
+  let foundItem;
+  let index;
+
   //   State Update Functions
   // 1. Increase Quantity selected
   const qtyIncrement = () => {
@@ -58,8 +61,18 @@ export const VDialContext = ({ children }) => {
   // 4. Remove product from cart
 
   const removeFromCart = (id) => {
+    let itemInCart = cartItems.find((item) => item._id === id);
+
     const updatedCart = cartItems.filter((item) => item._id !== id);
     setCartItems(updatedCart);
+    setTotalQuantities(
+      (initialQty) =>
+        initialQty - cartItems.find((item) => item._id === id).quantity
+    );
+
+    setTotalPrice(
+      updatedCart.reduce((init, item) => init + item.price * item.quantity, 0)
+    );
   };
 
   return (

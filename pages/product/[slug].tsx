@@ -11,7 +11,8 @@ import { UseVdialContext } from "../../context/VDialContext";
 
 const ProductDetails = ({ product, products }) => {
   // Bring in global state
-  const { qty, qtyDecrement, qtyIncrement, onAdd } = UseVdialContext();
+  const { qty, qtyDecrement, qtyIncrement, onAdd, setShowCart } =
+    UseVdialContext();
 
   const [index, setIndex] = useState(0);
 
@@ -82,7 +83,7 @@ const ProductDetails = ({ product, products }) => {
               >
                 Add to Cart
               </button>
-              <button className="w-36 p-3 border-[2px] border-red-700 text-red-700 bg-white-700 hover:scale-105 duration-700">
+              <button className="w-36 p-3 border-[2px] border-red-700 text-red-700 bg-white-700 hover:scale-105 duration-700" onClick={() => setShowCart(true)}>
                 {" "}
                 Buy Now
               </button>
